@@ -2,25 +2,25 @@ function ExecuteScript(strId)
 {
   switch (strId)
   {
-      case "6Cskfed45e0":
+      case "5qgi20Mqj98":
         Script1();
         break;
-      case "6Nl9FtZ4oXZ":
+      case "6lpHhPwUz0D":
         Script2();
         break;
-      case "63SvqRAONqL":
+      case "6oX9KDTCI3E":
         Script3();
         break;
-      case "6Msg6jmSxNJ":
+      case "6lwFPhdbcH9":
         Script4();
         break;
-      case "67AF2Ik7FGl":
+      case "622ALCd96LZ":
         Script5();
         break;
-      case "6iE3tETGLEH":
+      case "6QHweCxndf1":
         Script6();
         break;
-      case "69ZEI52gA9w":
+      case "5dZYdkpgeQ2":
         Script7();
         break;
   }
@@ -274,8 +274,8 @@ function Script4()
   var recognition = new SpeechRecognition();
   var speechRecognitionList = new SpeechGrammarList();
   recognition.grammars = speechRecognitionList;
-  recognition.continuous = true; 
   recognition.lang = 'en-GB';
+  recognition.continuous = false;   
   recognition.interimResults = true;
   recognition.maxAlternatives = 1;
 
@@ -311,6 +311,7 @@ function Script4()
   }
   
   recognition.onend = function(event) {
+  recognition.start();
       //Fired when the speech recognition service has disconnected.
       console.log('SpeechRecognition.onend');
     var player = GetPlayer();
